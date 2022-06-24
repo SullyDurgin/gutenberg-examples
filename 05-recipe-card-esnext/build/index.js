@@ -65,11 +65,13 @@ const Edit = props => {
   };
 
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    tagName: "h2",
+    tagName: "h1",
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Write Recipe title…', 'gutenberg-examples'),
     value: title,
     onChange: onChangeTitle
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "cook-time"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Prep Time')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Cook Time')), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Total Time'))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "recipe-image"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
     onSelect: onSelectImage,
@@ -177,7 +179,7 @@ const Save = props => {
   } = props;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save();
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
-    tagName: "h2",
+    tagName: "h1",
     value: title
   }), mediaURL && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     className: "recipe-image",
@@ -266,7 +268,7 @@ module.exports = window["wp"]["i18n"];
   \********************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://json.schemastore.org/block.json","apiVersion":2,"name":"gutenberg-examples/example-05-recipe-card-esnext","title":"Example: Recipe Card (ESNext)","icon":"index-card","category":"layout","attributes":{"title":{"type":"string","source":"html","selector":"h2"},"mediaID":{"type":"number"},"mediaURL":{"type":"string","source":"attribute","selector":"img","attribute":"src"},"ingredients":{"type":"string","source":"html","selector":".ingredients"},"instructions":{"type":"string","source":"html","selector":".steps"}},"example":{"attributes":{"title":"Chocolate Chip Cookies","mediaID":1,"mediaURL":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2ChocolateChipCookies.jpg/320px-2ChocolateChipCookies.jpg","ingredients":[{"type":"li","props":{"children":["flour"]}},{"type":"li","props":{"children":["sugar"]}},{"type":"li","props":{"children":["chocolate"]}},{"type":"li","props":{"children":["💖"]}}],"instructions":[{"type":"p","props":{"children":["Mix, Bake, Enjoy!"]}}]}},"editorScript":"file:./build/index.js","style":"file:./build/style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://json.schemastore.org/block.json","apiVersion":2,"name":"gutenberg-examples/example-05-recipe-card-esnext","title":"Example: Recipe Card (ESNext)","icon":"index-card","category":"layout","attributes":{"title":{"type":"string","source":"html","selector":"h1"},"mediaID":{"type":"number"},"mediaURL":{"type":"string","source":"attribute","selector":"img","attribute":"src"},"ingredients":{"type":"string","source":"html","selector":".ingredients"},"instructions":{"type":"string","source":"html","selector":".steps"}},"example":{"attributes":{"title":"Chocolate Chip Cookies","mediaID":1,"mediaURL":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2ChocolateChipCookies.jpg/320px-2ChocolateChipCookies.jpg","ingredients":[{"type":"li","props":{"children":["flour"]}},{"type":"li","props":{"children":["sugar"]}},{"type":"li","props":{"children":["chocolate"]}},{"type":"li","props":{"children":["💖"]}}],"instructions":[{"type":"p","props":{"children":["Mix, Bake, Enjoy!"]}}]}},"editorScript":"file:./build/index.js","style":"file:./build/style-index.css"}');
 
 /***/ })
 

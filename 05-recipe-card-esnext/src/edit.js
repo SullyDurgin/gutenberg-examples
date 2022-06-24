@@ -34,7 +34,7 @@ const Edit = ( props ) => {
 	return (
 		<div { ...blockProps }>
 			<RichText
-				tagName="h2"
+				tagName="h1"
 				placeholder={ __(
 					'Write Recipe title…',
 					'gutenberg-examples'
@@ -42,6 +42,12 @@ const Edit = ( props ) => {
 				value={ title }
 				onChange={ onChangeTitle }
 			/>
+		<div className='cook-time'>
+			<p>{ __( 'Prep Time' ) }</p>
+			<p>{ __( 'Cook Time' ) }</p>
+			<p>{ __( 'Total Time' ) }</p>
+		</div>
+
 			<div className="recipe-image">
 				<MediaUpload
 					onSelect={ onSelectImage }

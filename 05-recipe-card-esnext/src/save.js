@@ -14,6 +14,20 @@ const Save = ( props ) => {
 		<div { ...blockProps }>
 			<RichText.Content tagName="h1" value={ title } />
 
+			<div className="cook-time">
+				<table>
+					<tr>
+						<th>Prep Time</th>
+						<th>Cook Time</th>
+						<th>Total Time</th>
+					</tr>
+					<tr>
+						<td>15 mins</td>
+						<td>15 mins</td>
+						<td>30 mins</td>
+					</tr>
+				</table>
+			</div>
 
 			{ mediaURL && (
 				<img

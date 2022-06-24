@@ -42,11 +42,6 @@ const Edit = ( props ) => {
 				value={ title }
 				onChange={ onChangeTitle }
 			/>
-		<div className='cook-time'>
-			<p>{ __( 'Prep Time' ) }</p>
-			<p>{ __( 'Cook Time' ) }</p>
-			<p>{ __( 'Total Time' ) }</p>
-		</div>
 
 			<div className="recipe-image">
 				<MediaUpload

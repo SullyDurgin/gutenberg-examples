@@ -24,11 +24,6 @@ const Edit = (props) => {
 		});
 	};
 
-	const onChangeIngredients = (value) => {
-		setAttributes({ ingredients: value });
-		console.log(getFoodNutrition(value));
-	};
-
 	function getFoodNutrition(value) {
 		const initials = {
 			calories: 0,
@@ -44,9 +39,8 @@ const Edit = (props) => {
 			cream: { calories: 223, carbs: 3, fat: 44 },
 		};
 
-
 		// Convert list string value to array
-		value = value.replaceAll('<li>', '').split('</li>')
+		value = value.replaceAll('<li>', '').split('</li>');
 		// Loop over the caloriesData keys
 		const { calories, carbs, fat } = Object.keys(caloriesData)
 			// filter keys that are in the value (entries)
@@ -63,9 +57,14 @@ const Edit = (props) => {
 				}),
 				initials
 			);
-console.log(value);
+		console.log(value);
 		return `Calories: ${calories}kcal - Carbs: ${carbs}gr - fat: ${fat}gr`;
 	}
+
+	const onChangeIngredients = (value) => {
+		setAttributes({ ingredients: value });
+		console.log(getFoodNutrition(value));
+	};
 
 	const onChangeInstructions = (value) => {
 		setAttributes({ instructions: value });

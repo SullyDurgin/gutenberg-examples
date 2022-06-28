@@ -43,5 +43,26 @@
 	display: table;
 }
 
+.cook-time {
+	text-align: center;
+	background-color: rgba(78, 200, 216, 0.128);
+	width: 33%;
+}
+
+th {
+	font-size: 12px;
+	color: darkcyan;
+	padding-right: 5px;
+
+}
+
+td {
+	font-size: 12px;
+	padding-right: 8px;
+	padding-left: 0px;
+
+
+}
+
 
 /*# sourceMappingURL=style-index.css.map*/

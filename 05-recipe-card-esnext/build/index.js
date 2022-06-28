@@ -55,13 +55,6 @@ const Edit = props => {
     });
   };
 
-  const onChangeIngredients = value => {
-    setAttributes({
-      ingredients: value
-    });
-    console.log(getFoodNutrition(value));
-  };
-
   function getFoodNutrition(value) {
     const initials = {
       calories: 0,
@@ -112,6 +105,13 @@ const Edit = props => {
     console.log(value);
     return `Calories: ${calories}kcal - Carbs: ${carbs}gr - fat: ${fat}gr`;
   }
+
+  const onChangeIngredients = value => {
+    setAttributes({
+      ingredients: value
+    });
+    console.log(getFoodNutrition(value));
+  };
 
   const onChangeInstructions = value => {
     setAttributes({

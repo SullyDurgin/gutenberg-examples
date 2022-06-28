@@ -24,6 +24,11 @@ const Edit = (props) => {
 		});
 	};
 
+	const onChangeIngredients = (value) => {
+		setAttributes({ ingredients: value });
+		console.log(getFoodNutrition(value));
+	};
+
 	function getFoodNutrition(value) {
 		const initials = {
 			calories: 0,
@@ -38,30 +43,29 @@ const Edit = (props) => {
 			flour: { calories: 34, carbs: 83, fat: 6 },
 			cream: { calories: 223, carbs: 3, fat: 44 },
 		};
-		value = value.replace('<li>', '').split('<li>');
-		let calories,
-			carbs,
-			fat = Object.keys(caloriesData)
-				.filter(
-					(key) =>
-						value.filter((ingredient) => ingredient === key).length
-				)
-				.reduce(
-					(res, key) => ({
-						calories: res.carbs + caloriesData[key].calories,
-						carbs: res.calories + caloriesData[key].carbs,
-						fat: res.fat + caloriesData[key].fat,
-					}),
-					initials
-				);
 
-		return `Calories: {calories}kcal - Carbs: {carbs}gr - fat: {fat}gr`;
+
+		// Convert list string value to array
+		value = value.replaceAll('<li>', '').split('</li>')
+		// Loop over the caloriesData keys
+		const { calories, carbs, fat } = Object.keys(caloriesData)
+			// filter keys that are in the value (entries)
+			.filter(
+				(key) => value.filter((ingredient) => ingredient === key).length
+			)
+
+			// Calculate sum of calories, carbs, fat
+			.reduce(
+				(res, key) => ({
+					calories: res.calories + caloriesData[key].calories,
+					carbs: res.carbs + caloriesData[key].carbs,
+					fat: res.fat + caloriesData[key].fat,
+				}),
+				initials
+			);
+console.log(value);
+		return `Calories: ${calories}kcal - Carbs: ${carbs}gr - fat: ${fat}gr`;
 	}
-
-	const onChangeIngredients = (value) => {
-		setAttributes({ ingredients: value });
-		console.log(getFoodNutrition(value));
-	};
 
 	const onChangeInstructions = (value) => {
 		setAttributes({ instructions: value });
